@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+@theme {
+  --color-midnight-blue: #0A0E1A;
+  --color-surface-base: #0F131F;
+  
+  --color-neon-purple: #BC13FE;
+  --color-neon-purple-dim: #EBB2FF;
+  
+  --color-electric-cyan: #00F0FF;
+  --color-secondary-container: #00EEFC;
+  
+  --color-text-main: #DFE2F3;
+  --color-text-variant: #D4C0D7;
+  
+  --color-outline: #9D8BA0;
+  --color-error: #FFB4AB;
+  
+  --color-surface-container-lowest: #0A0E1A;
+  --color-surface-container-low: #171B28;
+  --color-surface-container: #1B1F2C;
+  --color-surface-container-high: #262A37;
+  --color-surface-container-highest: #313442;
+  --color-surface-bright: #353946;
+
+  --font-inter: "Inter", sans-serif;
+  --font-space-grotesk: "Space Grotesk", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-midnight-blue text-text-main font-inter antialiased min-h-screen selection:bg-neon-purple selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-space-grotesk;
+  }
+}
+
+@layer utilities {
+  .glass-surface {
+    @apply bg-surface-base/80 backdrop-blur-[12px] border border-white/5 shadow-lg;
+    border-top-color: rgba(255, 255, 255, 0.1);
+    border-left-color: rgba(255, 255, 255, 0.05);
+    border-bottom-color: rgba(255, 255, 255, 0.02);
+    border-right-color: rgba(255, 255, 255, 0.02);
+  }
+
+  .glass-floating {
+    @apply bg-surface-container-highest/80 backdrop-blur-[20px] border border-white/10;
+    box-shadow: 0 0 20px 0 rgba(188, 19, 254, 0.15); /* Neon Purple 15% opacity glow */
+  }
+
+  .text-glow {
+    text-shadow: 0 0 10px rgba(188, 19, 254, 0.6);
+  }
+  
+  .cyan-glow {
+    text-shadow: 0 0 10px rgba(0, 240, 255, 0.6);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
