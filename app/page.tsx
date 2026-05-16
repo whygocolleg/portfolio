@@ -50,7 +50,7 @@ export default async function HomePage() {
             <div>
               <p className="text-text-variant text-lg mb-2">{profile?.greeting ?? '안녕하세요!'}</p>
               <h1 className="text-5xl md:text-[64px] font-bold leading-[1.1] tracking-[-0.02em]">
-                <span className="text-glow text-neon-purple">{profile?.name ?? '홍길동'}</span>
+                <span className="text-electric-cyan">{profile?.name ?? '홍길동'}</span>
               </h1>
               <p className="text-2xl text-electric-cyan cyan-glow mt-3">{profile?.title ?? 'Full Stack Developer'}</p>
             </div>
