@@ -88,15 +88,22 @@ async function main() {
   // 금융 앱 프로젝트
   await prisma.project.upsert({
     where: { slug: 'finance-app' },
-    update: {},
+    update: {
+      title: 'AI 소비 예측 기반 개인 금융 관리 웹앱',
+      description: '국민카드 실제 결제내역 데이터를 수집하고 scikit-learn ML 모델로 오늘의 예상 소비를 예측해 절약 목표에 연동하는 금융 웹앱입니다.',
+      longDescription: '졸업작품으로 개발한 AI 기반 개인 금융 관리 서비스입니다.\n\n국민카드에서 발급한 실제 결제내역 엑셀 파일을 수집하고, Python scikit-learn으로 개인 소비 패턴 예측 모델을 구현했습니다. 학습된 모델이 오늘 지출 가능성이 높은 항목을 미리 예측해 화면에 표시하고, 사용자가 실제로 절약했을 때 저축 목표에 즉시 반영되는 흐름을 설계했습니다.\n\n프론트엔드 전체(5개 화면)를 바닐라 JavaScript ES Modules로 구현했으며, 상태 관리, API 연동, Skeleton UI, Toast 알림, 슬라이드 화면 전환 등을 직접 설계했습니다. Chart.js를 활용한 카테고리별 소비 통계 시각화와 D-day 기반 하루 절약 목표 안내 기능도 포함합니다.',
+      techStack: ['JavaScript', 'Python', 'scikit-learn', 'Chart.js', 'NestJS', 'PostgreSQL', 'HTML', 'CSS'],
+      githubUrl: 'https://github.com/whygocolleg/financeappFRONT',
+      liveUrl: 'https://whygocolleg.github.io/financeappFRONT/',
+    },
     create: {
       slug: 'finance-app',
-      title: '금융 소비 패턴 분석 앱',
-      description: '사용자의 소비내역을 기반으로 소비패턴을 분석하여 당일 소비를 예측하고 절약을 도와주는 금융 웹앱입니다.',
-      longDescription: '졸업작품으로 개발한 금융 웹 애플리케이션입니다. 사용자의 소비내역 데이터를 분석하여 소비 패턴을 파악하고, 하루 단위로 소비를 예측함으로써 절약 목표 달성을 도와줍니다. Firebase를 활용한 실시간 데이터 관리와 인증 기능을 구현했습니다.',
+      title: 'AI 소비 예측 기반 개인 금융 관리 웹앱',
+      description: '국민카드 실제 결제내역 데이터를 수집하고 scikit-learn ML 모델로 오늘의 예상 소비를 예측해 절약 목표에 연동하는 금융 웹앱입니다.',
+      longDescription: '졸업작품으로 개발한 AI 기반 개인 금융 관리 서비스입니다.\n\n국민카드에서 발급한 실제 결제내역 엑셀 파일을 수집하고, Python scikit-learn으로 개인 소비 패턴 예측 모델을 구현했습니다. 학습된 모델이 오늘 지출 가능성이 높은 항목을 미리 예측해 화면에 표시하고, 사용자가 실제로 절약했을 때 저축 목표에 즉시 반영되는 흐름을 설계했습니다.\n\n프론트엔드 전체(5개 화면)를 바닐라 JavaScript ES Modules로 구현했으며, 상태 관리, API 연동, Skeleton UI, Toast 알림, 슬라이드 화면 전환 등을 직접 설계했습니다. Chart.js를 활용한 카테고리별 소비 통계 시각화와 D-day 기반 하루 절약 목표 안내 기능도 포함합니다.',
       thumbnail: '/images/projects/finance.jpg',
       category: ProjectCategory.WEB,
-      techStack: ['JavaScript', 'TypeScript', 'Firebase', 'CSS', 'HTML'],
+      techStack: ['JavaScript', 'Python', 'scikit-learn', 'Chart.js', 'NestJS', 'PostgreSQL', 'HTML', 'CSS'],
       githubUrl: 'https://github.com/whygocolleg/financeappFRONT',
       liveUrl: 'https://whygocolleg.github.io/financeappFRONT/',
       startDate: new Date('2025-09-01'),
